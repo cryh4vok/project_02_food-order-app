@@ -1,4 +1,4 @@
-import Card from '../UI/Card';
+import Modal from '../UI/Modal';
 import styleClasses from './Cart.module.css';
 
 const Cart = (props) => {
@@ -18,21 +18,17 @@ const Cart = (props) => {
     );
 
     return (
-        <Card>
-            <div>
-                {cartItems}
-                <div className={styleClasses.total}>
-                    <span>Total</span>
-                    <span>$13.99</span>
-                </div>
-                <div className={styleClasses.actions}>
-                    <button className={styleClasses['button--alt']}>
-                        Close
-                    </button>
-                    <button className={styleClasses['button']}>Order</button>
-                </div>
+        <Modal>
+            {cartItems}
+            <div className={styleClasses.total}>
+                <span>Total</span>
+                <span>$13.99</span>
             </div>
-        </Card>
+            <div className={styleClasses.actions}>
+                <button className={styleClasses['button--alt']}>Close</button>
+                <button className={styleClasses['button']}>Order</button>
+            </div>
+        </Modal>
     );
 };
 
